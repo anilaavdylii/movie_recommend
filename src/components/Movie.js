@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-function Rating({ source, value }) {
+function Rating({ Source, Value }) {
   return (
-    <span className="session w-100">
-      {source} <strong>Value: {value}</strong>
+    <span className="rating w-100">
+      {Source} <strong>Value: {Value}</strong>
     </span>
   );
 }
 
 function Ratings({ ratings }) {
   return (
-    <div className="sessionBox card h-250">
+    <div className="ratingBox card h-250">
       <Rating {...ratings[0]} />
     </div>
   );
@@ -18,10 +18,10 @@ function Ratings({ ratings }) {
 
 function MovieImage({ id, title }) {
   return (
-    <div className="speaker-img d-flex flex-row justify-content-center align-items-center h-300">
+    <div className="movie-img d-flex flex-row justify-content-center align-items-center h-300">
       <img
         className="contain-fit"
-        src={`/images/movie-${id}.jpg`}
+        src={`/images/movie-${id}.png`}
         width="300"
         alt={`${title}`}
       />
@@ -70,11 +70,11 @@ function MovieDemographics({
   onFavoriteToggle,
 }) {
   return (
-    <div className="speaker-info">
+    <div className="movie-info">
       <div className="d-flex justify-content-between mb-3">
         <h3 className="text-truncate w-200">
-          {title} - {year}
-          {released} -- {runtime}
+          {title}  <br/> 
+          {released}  <br/> {runtime}
         </h3>
       </div>
       <MovieFavorite

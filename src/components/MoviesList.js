@@ -21,11 +21,11 @@ function MoviesList({ showRatings }) {
 
 
   return (
-    <div className="container speakers-list">
+    <div className="container movies-list">
       <ReactPlaceHolder
         type="media"
         rows={20}
-        className="speakerslist-placeholder"
+        className="movieslist-placeholder"
         ready={requestStatus === REQUEST_STATUS.SUCCESS}
       >
         <div className="row">
