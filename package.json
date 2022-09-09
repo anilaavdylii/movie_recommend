@@ -1,0 +1,29 @@
+{
+  "name": "movie_recommend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anilaavdylii/movie_recommend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anilaavdylii/movie_recommend/issues"
+  },
+  "homepage": "https://github.com/anilaavdylii/movie_recommend#readme",
+  "dependencies": {
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-placeholder": "^4.1.0"
+  }
+}
