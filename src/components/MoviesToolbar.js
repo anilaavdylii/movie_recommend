@@ -1,4 +1,10 @@
-function MoviesToolbar({ theme, setTheme, showRatings, setShowRatings }) {
+import {ThemeContext} from "../contexts/ThemeContext";
+import {useContext} from 'react';
+
+function MoviesToolbar({ showRatings, setShowRatings }) {
+
+  const {theme, setTheme} = useContext(ThemeContext);
+
   return (
     <section className="toolbar dark-theme-header">
       <div className="container">
