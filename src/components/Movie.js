@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
+import {MovieFilterContext} from "./../contexts/MovieFilterContext";
 
 function Rating({ Source, Value }) {
   return (
     <span className="rating w-100">
-      {Source} <strong>Value: {Value}</strong>
+      {Source} <strong>Value: {Value}/10</strong>
     </span>
   );
 }
@@ -88,8 +89,9 @@ function MovieDemographics({
   );
 }
 
-function Movie({ movie, showRatings, onFavoriteToggle }) {
+function Movie({ movie, onFavoriteToggle }) {
   const { id, title, year, ratings } = movie;
+  const {showRatings} = useContext(MovieFilterContext);
   return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-sm-12 col-xs-12">
       <div className="card card-height p-4 mt-4">

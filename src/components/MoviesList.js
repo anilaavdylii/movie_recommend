@@ -2,14 +2,17 @@ import Movie from "./Movie";
 import ReactPlaceHolder from "react-placeholder";
 import useRequestDelay, { REQUEST_STATUS } from "../hooks/useRequestDelay";
 import { data } from "../../MovieData";
+import {MovieFilterContext} from "./../contexts/MovieFilterContext";
 
-function MoviesList({ showRatings }) {
+function MoviesList() {
   const {
     data: moviesData,
     requestStatus,
     error,
     updateRecord,
   } = useRequestDelay(2000, data);
+
+
 
   if (requestStatus === REQUEST_STATUS.FAILURE) {
     return (
@@ -34,7 +37,6 @@ function MoviesList({ showRatings }) {
               <Movie
                 key={movie.id}
                 movie={movie}
-                showRatings={showRatings}
                 onFavoriteToggle={(doneCallback) => {
                   updateRecord(
                     {

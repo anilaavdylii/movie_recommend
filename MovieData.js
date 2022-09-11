@@ -11,15 +11,15 @@ export const data = [
     ratings: [
       {
         "Source": "Internet Movie Database",
-        "Value": "10/10"
+        "Value": "10"
       },
       {
         "Source": "Rotten Tomatoes",
-        "Value": "16%"
+        "Value": "7"
       },
       {
         "Source": "Metacritic",
-        "Value": "37/100"
+        "Value": "8"
       }
     ],
   },
@@ -34,11 +34,11 @@ export const data = [
     ratings: [
       {
         "Source": "Internet Movie Database",
-        "Value": "6.0/10"
+        "Value": "9"
       },
       {
         "Source": "Metacritic",
-        "Value": "46/100"
+        "Value": "7"
       }
     ]
   },
@@ -54,15 +54,15 @@ export const data = [
     ratings: [
       {
         "Source": "Internet Movie Database",
-        "Value": "8.0/10"
+        "Value": "5"
       },
       {
         "Source": "Rotten Tomatoes",
-        "Value": "85%"
+        "Value": "8"
       },
       {
         "Source": "Metacritic",
-        "Value": "65/100"
+        "Value": "9"
       }
     ],
   },
@@ -78,15 +78,15 @@ export const data = [
     ratings: [
       {
         "Source": "Internet Movie Database",
-        "Value": "6.8/10"
+        "Value": "6"
       },
       {
         "Source": "Rotten Tomatoes",
-        "Value": "48%"
+        "Value": "5"
       },
       {
         "Source": "Metacritic",
-        "Value": "46/100"
+        "Value": "4"
       }
     ],
   },

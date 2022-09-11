@@ -1,9 +1,11 @@
 import {ThemeContext} from "../contexts/ThemeContext";
+import {MovieFilterContext} from "../contexts/MovieFilterContext";
 import {useContext} from 'react';
 
-function MoviesToolbar({ showRatings, setShowRatings }) {
+function MoviesToolbar() {
 
   const {theme, setTheme} = useContext(ThemeContext);
+  const {showRatings, setShowRatings} = useContext(MovieFilterContext);
 
   return (
     <section className="toolbar dark-theme-header">

@@ -1,18 +1,14 @@
 import MoviesToolbar from "./MoviesToolbar";
 import MoviesList from "./MoviesList";
-import { useState } from "react";
+import {MovieFilterProvider} from "../contexts/MovieFilterContext";
 
 function Movies() {
-  const [showRatings, setShowRatings] = useState(true);
 
   return (
-    <>
-      <MoviesToolbar
-        showRatings={showRatings}
-        setShowRatings={setShowRatings}
-      />
-      <MoviesList showRatings={showRatings} />
-    </>
+    <MovieFilterProvider startingShowRatings={false}>
+      <MoviesToolbar />
+      <MoviesList />
+    </MovieFilterProvider>
   );
 }
 
