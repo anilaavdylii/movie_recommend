@@ -74,11 +74,12 @@ function MovieFavorite({ favorite, onFavoriteToggle }) {
 }
 
 function MovieDemographics({
+  id,
   title,
-  year,
   released,
   runtime,
   summary,
+  link,
   favorite,
   onFavoriteToggle,
 }) {
@@ -87,16 +88,22 @@ function MovieDemographics({
       <div className="d-flex justify-content-between mb-3">
         <h3 className="text-truncate w-200">
           {title}  <br/> 
-          {released}  <br/> {runtime}
         </h3>
       </div>
+      <MovieImage id={id} title={title}  />
       <MovieFavorite
         favorite={favorite}
         onFavoriteToggle={onFavoriteToggle}
       />
       <div>
+        <p className="card-link"> {released}  <br/> {runtime}<br/><br/><a href={link} target="_blank">Watch now on THEFLIXER"</a></p>
+      </div>
+      <br/>
+      <div>
         <p className="card-description">{summary}</p>
       </div>
+      <br/>
+      
     </div>
   );
 }
@@ -107,7 +114,7 @@ function Movie({ movie, onFavoriteToggle }) {
   return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-sm-12 col-xs-12">
       <div className="card card-height p-4 mt-4">
-        <MovieImage id={id} title={title}  />
+        
         <MovieDemographics {...movie} onFavoriteToggle={onFavoriteToggle} />
       </div>
       {showRatings === true ? <Ratings ratings={ratings} /> : null}

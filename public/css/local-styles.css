@@ -65,7 +65,6 @@ img {
     padding-right: 10px;
 }
 
-/*.logo img{width:inherit; border:0;}*/
 header {
     display: flex;
     flex-wrap: wrap;
@@ -89,7 +88,7 @@ header {
 }
 
 .navbar-nav > li a {
-    color: #bdfef2 !important;
+    color: #aebebc !important;
     padding: 15px 13px !important;
 }
 
@@ -104,7 +103,7 @@ header {
 }
 
 .sign a {
-    color: #bdfef2 !important;
+    color: #97c0b9 !important;
     font-size: 14px;
 }
 
@@ -360,7 +359,7 @@ footer .border {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #bbb;
+    background-color: rgb(211, 211, 211);
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 25px;
@@ -380,11 +379,11 @@ footer .border {
 }
 
 input:checked + .switch {
-    background-color: #51b5b1;
+    background-color: #c1a3b9;
 }
 
 input:focus + .switch {
-    box-shadow: 0 0 1px #51b5b1;
+    box-shadow: 0 0 1px #c1a3b9;
 }
 
 input:checked + .switch:before {
@@ -552,6 +551,8 @@ input:checked + .switch:before {
     flex-wrap: wrap;
     color: #7a7a7a;
     font-size: 14px;
+    text-align: end;
+    padding-top: 20px;
 }
 
 .action span {
@@ -575,6 +576,11 @@ input:checked + .switch:before {
 
 .action .fa-angle-down {
     font-size: 16px;
+}
+
+.text-truncate{
+    text-align: center;
+    padding-left: 50px;
 }
 
 .btn-load {
@@ -771,11 +777,22 @@ input:checked + .switch:before {
     padding: 0 10px 0 0px;
 }
 
+.card{
+    border-radius: 5px;
+}
+
 .card-description {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
-    overflow: hidden !important;
+    /* overflow: hidden !important; */
+}
+
+.card-link {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-align: end;
 }
 
 .show-fav .movies-list {
@@ -1149,7 +1166,7 @@ input:checked + .switch:before {
 }
 
 .card-height {
-    height: 575px;
+    height: 700px;
 }
 
 .blue-btn {
@@ -1170,7 +1187,7 @@ input:checked + .switch:before {
 }
 
 .w-200 {
-    width: 200px;
+    width: 257px;
 }
 
 .h-250 {
