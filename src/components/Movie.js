@@ -10,9 +10,21 @@ function Rating({ Source, Value }) {
 }
 
 function Ratings({ ratings }) {
+  const {ratingValue} = useContext(MovieFilterContext);
+
   return (
     <div className="ratingBox card h-250">
-      <Rating {...ratings[0]} />
+      {ratings.filter(function(rating){
+        return rating.Value === ratingValue;
+      })
+      .map(function(rating){
+        return(
+          <div className="rating w-100" key={rating.id}>
+            <Rating {...rating}/>
+          </div>
+        )
+      })
+      }
     </div>
   );
 }

@@ -5,7 +5,7 @@ import {useContext} from 'react';
 function MoviesToolbar() {
 
   const {theme, setTheme} = useContext(ThemeContext);
-  const {showRatings, setShowRatings} = useContext(MovieFilterContext);
+  const {showRatings, setShowRatings, ratingValue, setRatingValue, setSearchQuery, RATING_VALUES} = useContext(MovieFilterContext);
 
   return (
     <section className="toolbar dark-theme-header">
@@ -38,6 +38,38 @@ function MoviesToolbar() {
                   <option value="light">Light</option>
                   <option value="dark">Dark</option>
                 </select>
+              </label>
+            </li>
+            <li>
+              <div className="input-group">
+                <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search..."
+                      onChange={(event) => {
+                        setSearchQuery(event.target.value);
+                      }}
+                    />
+                  <div className="input-group-append">
+                    <button className="btn btn-secondary" type="button">
+                      <i className="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+            </li>
+            <li className="d-flex flex-column flex-md-row">
+              <strong>Rating Value</strong>
+              <label className="dropmenu">
+                <select className="form-control" value={ratingValue} 
+                      onChange={({currentTarget})=>{
+                        setRatingValue(currentTarget.value);
+                      }}>
+                        {RATING_VALUES.map(function(ratingv){
+                          return(
+                            <option value={ratingv} key={ratingv}>{ratingv}</option>
+                          );
+                        })}
+                      </select>
               </label>
             </li>
           </ul>

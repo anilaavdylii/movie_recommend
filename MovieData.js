@@ -38,7 +38,7 @@ export const data = [
       },
       {
         "Source": "Metacritic",
-        "Value": "7"
+        "Value": "10"
       }
     ]
   },
@@ -58,7 +58,7 @@ export const data = [
       },
       {
         "Source": "Rotten Tomatoes",
-        "Value": "8"
+        "Value": "10"
       },
       {
         "Source": "Metacritic",
@@ -82,7 +82,7 @@ export const data = [
       },
       {
         "Source": "Rotten Tomatoes",
-        "Value": "5"
+        "Value": "10"
       },
       {
         "Source": "Metacritic",

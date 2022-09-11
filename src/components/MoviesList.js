@@ -2,6 +2,7 @@ import Movie from "./Movie";
 import ReactPlaceHolder from "react-placeholder";
 import useRequestDelay, { REQUEST_STATUS } from "../hooks/useRequestDelay";
 import { data } from "../../MovieData";
+import {useContext} from "react";
 import {MovieFilterContext} from "./../contexts/MovieFilterContext";
 
 function MoviesList() {
@@ -12,7 +13,7 @@ function MoviesList() {
     updateRecord,
   } = useRequestDelay(2000, data);
 
-
+  const { searchQuery, ratingValue } = useContext(MovieFilterContext);
 
   if (requestStatus === REQUEST_STATUS.FAILURE) {
     return (
@@ -32,7 +33,19 @@ function MoviesList() {
         ready={requestStatus === REQUEST_STATUS.SUCCESS}
       >
         <div className="row">
-          {moviesData.map(function (movie) {
+          {moviesData
+          .filter(function(movie){
+            return(
+              movie.title.toLowerCase().includes(searchQuery) 
+            );
+          })
+          .filter(function(movie){
+            return movie.ratings.find((rating)=>{
+              return rating.Value === ratingValue;
+            });
+          })
+          
+          .map(function (movie) {
             return (
               <Movie
                 key={movie.id}
