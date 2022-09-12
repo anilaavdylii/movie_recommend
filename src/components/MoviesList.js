@@ -1,9 +1,10 @@
 import Movie from "./Movie";
 import ReactPlaceHolder from "react-placeholder";
-import useRequestDelay, { REQUEST_STATUS } from "../hooks/useRequestDelay";
+import useRequestRest, { REQUEST_STATUS } from "../hooks/useRequestRest";
 import { data } from "../../MovieData";
 import {useContext} from "react";
 import {MovieFilterContext} from "./../contexts/MovieFilterContext";
+import MovieAdd from "./MovieAdd";
 
 function MoviesList() {
   const {
@@ -11,7 +12,9 @@ function MoviesList() {
     requestStatus,
     error,
     updateRecord,
-  } = useRequestDelay(2000, data);
+    insertRecord,
+    deleteRecord
+  } = useRequestRest();
 
   const { searchQuery, ratingValue } = useContext(MovieFilterContext);
 
@@ -32,11 +35,12 @@ function MoviesList() {
         className="movieslist-placeholder"
         ready={requestStatus === REQUEST_STATUS.SUCCESS}
       >
+        <MovieAdd ratingValue={ratingValue} insertRecord={insertRecord}/>
         <div className="row">
           {moviesData
           .filter(function(movie){
             return(
-              movie.title.toLowerCase().includes(searchQuery) 
+              movie.title.toLowerCase().includes(searchQuery)
             );
           })
           .filter(function(movie){
@@ -50,15 +54,9 @@ function MoviesList() {
               <Movie
                 key={movie.id}
                 movie={movie}
-                onFavoriteToggle={(doneCallback) => {
-                  updateRecord(
-                    {
-                      ...movie,
-                      favorite: !movie.favorite,
-                    },
-                    doneCallback
-                  );
-                }}
+                updateRecord={updateRecord}
+                insertRecord={insertRecord}
+                deleteRecord={deleteRecord}
               />
             );
           })}

@@ -103,7 +103,7 @@ header {
 }
 
 .sign a {
-    color: #97c0b9 !important;
+    color: white !important;
     font-size: 14px;
 }
 
@@ -637,20 +637,20 @@ input:checked + .switch:before {
 
 /* .addSes{position:absolute; bottom:15px; right:10px;} */
 .addSes i {
-    border: 2px solid #51b5b1;
+    border: 2px solid #6d6d6d;
     border-radius: 60px;
     width: 35px;
     height: 35px;
     display: inline-block;
     text-align: center;
-    color: #51b5b1;
+    color: #6d6d6d;
     font-size: 35px;
     line-height: 22px;
     font-style: normal;
 }
 
 .addSes:hover i {
-    background: #51b5b1;
+    background: #6d6d6d;
     color: #fff;
 }
 
