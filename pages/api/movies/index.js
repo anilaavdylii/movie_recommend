@@ -11,7 +11,7 @@ const delay = (ms) =>
 export default async function handler(req, res) {
   //res.status(200).send(JSON.stringify(data, null, 2));
 
-  const jsonFile = path.resolve("./", "db.json");
+  const jsonFile = path.resolve("./", "moviedb.json");
   try {
     const readFileData = await readFile(jsonFile);
     await delay(1000);
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       console.log("GET /api/movies status: 200");
     }
   } catch (e) {
-    console.log("/api/movies error", e);
+    console.log("/api/speakers error", e);
     res.status(404).send("File Not Found on server");
   }
 }

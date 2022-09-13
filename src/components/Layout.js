@@ -11,7 +11,7 @@ function Layout({startingTheme, children}){
 
 function LayoutNoThemeProvider({children}){
 
-  const {theme} = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext); //theme not defined wih 1 function
     return(
             <div
               className={

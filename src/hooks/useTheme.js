@@ -2,7 +2,7 @@ import {useState} from "react";
 
 function useTheme(startingTheme="light"){
 
-    const [theme, setTheme] =useState(startingTheme);
+    const [theme, setTheme] = useState(startingTheme);
 
     function validateTheme(themeValue){
         if(themeValue === "dark"){

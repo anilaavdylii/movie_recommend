@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   const method = req?.method;
   const id = parseInt(req?.query.id);
   const recordFromBody = req?.body;
-  const jsonFile = path.resolve("./", "db.json");
+  const jsonFile = path.resolve("./", "moviedb.json");
 
   switch (method) {
     case "POST":

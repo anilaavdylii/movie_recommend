@@ -1,17 +1,6 @@
 {
   "movies": [
     {
-      "id": "5",
-      "title": "hello",
-      "summary": "Summary not entered yet!",
-      "ratings": [
-        {
-          "Source": "Admin",
-          "Value": "10"
-        }
-      ]
-    },
-    {
       "id": "2",
       "title": "Honest Thief",
       "year": "2020",
@@ -28,7 +17,8 @@
           "Source": "Metacritic",
           "Value": "10"
         }
-      ]
+      ],
+      "favorite": true
     },
     {
       "id": "3",
@@ -38,7 +28,7 @@
       "runtime": "108 min",
       "summary": "Deadpool is an American superhero film based on the Marvel Comics character of the same name. Distributed by 20th Century Fox, it is a spin-off in the X-Men film series and the eighth installment overall.",
       "link": "https://theflixer.tv/movie/watch-deadpool-full-19694",
-      "favorite": true,
+      "favorite": false,
       "ratings": [
         {
           "Source": "Internet Movie Database",
@@ -75,6 +65,30 @@
         {
           "Source": "Metacritic",
           "Value": "4"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Top Gun",
+      "year": "2022",
+      "released": "24 June 2022",
+      "runtime": "132 min",
+      "summary": "Is a 2022 American action drama film directed by Joseph Kosinski. It is the sequel to the 1986 film Top Gun.",
+      "link": "https://theflixer.tv/movie/watch-top-gun-full-18617",
+      "favorite": false,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "5"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "9"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "10"
         }
       ]
     }

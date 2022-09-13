@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext, memo} from "react";
 import {MovieFilterContext} from "./../contexts/MovieFilterContext";
 import { MovieProvider, MovieContext } from "./../contexts/MovieContext"
 import MovieDelete from "./MovieDelete"
@@ -122,20 +122,26 @@ function MovieDemographics() {
   );
 }
 
-function Movie({ movie, updateRecord, insertRecord, deleteRecord }) {
-  const {showRatings} = useContext(MovieFilterContext);
-  return (
-    <MovieProvider movie={movie} updateRecord={updateRecord} insertRecord={insertRecord} deleteRecord={deleteRecord}>
-      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-sm-12 col-xs-12">
-        <div className="card card-height p-4 mt-4">
-        <MovieImage  />
-          <MovieDemographics  />
+const Movie = memo(function Movie({ movie, updateRecord, insertRecord, deleteRecord }) {
+    const {showRatings} = useContext(MovieFilterContext);
+    return (
+      <MovieProvider movie={movie} updateRecord={updateRecord} insertRecord={insertRecord} deleteRecord={deleteRecord}>
+        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-sm-12 col-xs-12">
+          <div className="card card-height p-4 mt-4">
+          <MovieImage  />
+            <MovieDemographics  />
+          </div>
+          {showRatings === true ? <Ratings /> : null}
+          <MovieDelete/>
         </div>
-        {showRatings === true ? <Ratings /> : null}
-        <MovieDelete/>
-      </div>
-    </MovieProvider>
-  );
+      </MovieProvider>
+    );
+  }, areEqualMovie
+);
+
+function areEqualMovie(prevProps, nextProps){
+  return(prevProps.movie.favorite === nextProps.movie.favorite);
 }
+
 
 export default Movie;

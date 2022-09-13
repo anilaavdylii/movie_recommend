@@ -16,7 +16,7 @@ function Header() {
             <h4 className="header-title">Greatest Movies of All Time</h4>
           </div>
           <div className={theme === "light" ? "" : "text-info"}>
-            Hello Mr. Smith &nbsp;&nbsp;
+            Hello &nbsp;&nbsp;
             <span>
               <a href="#">sign-out</a>
             </span>
